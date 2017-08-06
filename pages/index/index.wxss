@@ -1,0 +1,40 @@
+/**index.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.index-title {
+  height: 250rpx;
+}
+.app-icon {
+  width: 100%;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.app-name {
+  color: #aaa;
+  font-size: 50rpx;
+  margin: 20rpx;
+  position: relative;
+  left: 40rpx;
+  top: 50rpx;
+}
+
+.btn-index {
+  margin-top: 30px;
+}
+
+.input-style {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 45rpx;
+}

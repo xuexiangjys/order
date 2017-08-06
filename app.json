@@ -1,0 +1,13 @@
+{
+  "pages": [ 
+    "pages/index/index",
+    "pages/home/home",
+    "pages/order/order"      
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小麻雀订餐系统",
+    "navigationBarTextStyle": "black"
+  }
+}

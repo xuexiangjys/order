@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="page">
+    <scroll-view class="content-container" lower-threshold="800" bindscrolltolower="pullUpLoad" upper-threshold="0" scroll-y="true" >
+      <view class="page__bd">
+        <view class="weui-panel">
+          <view class="weui-panel__hd">菜单列表</view>
+          <view class="weui-panel__bd">
+          
+      <block wx:if="{{foodsList.length>0}}">
+            <view class="weui-media-box weui-media-box_text" wx:for="{{foodsList}}" wx:for-item="food" wx:key="foodid">
+              <view class="weui-media-box__title weui-media-box__title_in-text">
+                {{food.foodname}}</view>
+              <view class="weui-media-box__desc">{{food.description}}</view>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta weui-media-time">已销售：{{food.salednum}}</view>
+                <view class="weui-media-box__info__meta weui-media-time">价格：
+                <text style="color:red">{{food.price}}¥</text>
+                </view>
+                <view class="weui-media-box__info__meta weui-media-box__info__operate" >
+                   <view class="weui-media-box__info__meta" catchtap="tapReduceCart" data-foodid="{{food.foodid}}">
+                    <icon type="cancel" size="25"></icon>
+                    <text style="font-size: 15px">删除</text>
+                  </view>
+                  <view class="weui-media-box__info__meta" catchtap="tapAddCart" data-foodid="{{food.foodid}}">
+                    <icon type="success" size="25"></icon>
+                    <text style="font-size: 15px" >选择</text>
+                  </view>                         
+                </view>
+              </view>
+            </view>
+      </block>
+      <block wx:else>
+            <view class="weui-media-box weui-media-box_text">
+              <view class="weui-media-box__title weui-media-box__title_in-text">
+              正在加载内容，请稍后...</view>
+              <view class="weui-media-box__desc"></view>
+            </view>
+      </block> 
+
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+    <view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">
+      <view class="mask" catchtap="hideCartDetail"></view>
+      <view class="list">
+        <view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
+          <view class="name ellipsis">{{foodsList[id].foodname}}</view>
+          <view class="total">¥{{foodsList[id].price*cart.list[id]}}</view>
+          <view class="reduce" data-foodid="{{id}}" catchtap="tapReduceCart">-</view>
+          <view class="num">{{num}}</view>
+          <view class="add" data-foodid="{{id}}" catchtap="tapAddCart">+</view>
+        </view>
+      </view>
+    </view>
+    <view class="cart">
+      <view class="data" catchtap="showCartDetail">
+        <view class="icon">
+          <image src="../../img/shop/cart.png"></image>
+          <view class="count">{{cart.count}}</view>
+        </view>
+        <view class="total">¥{{cart.total}}</view>
+      </view>
+      <form bindsubmit="submit" report-submit="true">
+        <!--<view formType="submit" class="submit">去结算</view>-->
+        <button class="yellow {{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}">去结算</button>
+      </form>
+    </view>
+
+</view>

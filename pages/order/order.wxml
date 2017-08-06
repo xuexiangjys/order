@@ -1,0 +1,21 @@
+<view>
+  <view class="panel__hd">今日下单详情：</view>
+
+  <view wx:if="{{!loading}}" class="table">
+        <view class="tr">
+            <view class="th">品名</view>
+            <view class="th">价格</view>
+            <view class="th">数量</view>
+        </view>
+        <view class="tr" wx:for="{{orderinfos}}">
+            <view class="td">{{item.foodname}}</view>
+            <view class="td">{{item.foodprice}}</view>
+            <view class="td">{{item.foodnumber}}</view>
+        </view>
+  </view>
+  <view wx:else class="loading"> 正在加载数据...</view>
+  <view wx:if="{{!loading}}" class="panel__bottom">
+  <text>总计：{{total}}元</text>
+  <button type="default" style="color: red" size="mini" bindtap="reOrder">重新下单</button>
+  </view>
+</view>

@@ -1,0 +1,237 @@
+/**index.wxss**/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: space-between;
+  font-size: 32rpx;
+  font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+
+.content-container {
+	display: -webkit-flex;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	padding-bottom: 100rpx;
+}
+
+.goods-container {
+	-webkit-flex: 1;
+	background: #ffffff;
+	height: 100%;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.add_layer{width:100%;height:100%;background:rgba(66, 69, 72, 0.74);position:fixed;left:0;top:0;}
+.add_layer input,.add_layer textarea,.add_layer button{width:80%;margin:0 auto;margin:15px auto;font-size:14px;padding:10rpx;}
+.add_layer input,.add_layer textarea{
+  background:#fff;
+}
+.diary_list{border-bottom:1px solid #ccc;margin:0px 0;padding:10px;position:relative;}
+.diary_list text{font-size:16px;color:#1e1e1e;}
+.diary_list view{font-size:14px;padding:5px 0}
+.diary_list button{
+  position:absolute;
+  right:15px;
+  top:12px;
+}
+.diary_list button.modify{right:90px;}
+
+
+.weui-media-box__info__operate{
+  float:right;
+  color:#1e1e1e;
+  padding-right:0em;
+
+}
+.weui-media-box__info__operate .del{
+  margin-right: 20px;
+  font-size: 15px;
+}
+.toWrite {
+width:100rpx;
+height:100rpx;
+display: block;
+background:url("/image/add.png") no-repeat;
+padding:0;
+background-size:cover;
+position:fixed;
+right:74rpx;
+bottom:100rpx;
+border-radius: 50%;
+z-index: 999;
+}
+.weui-media-box{
+  padding-bottom: 0px;
+}
+.weui-media-time{
+  width:180rpx;
+  height: 1em;
+  overflow: hidden;
+}
+
+.weui-cells__title{
+  text-align: left;
+}
+textarea,input{
+  text-align: left;
+  color:#1e1e1e;
+}
+.weui-cells {
+  border:1px solid #3891f8;
+}
+.weui-cells__title{
+  padding-left: 0px;
+  color:#1e1e1e;
+}
+.weui-dialog__ft button{
+  background: none;
+  padding: 0px;
+  margin: 0px;
+}
+form .weui-dialog__bd:first-child {
+  padding:0px 30rpx 1.7em;
+  
+}
+.page__ft{
+      padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+
+.searchbar-result{
+  border:none;
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+
+
+.cart-detail, .cart-detail .mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.cart-detail .mask {
+	background: rgba(0,0,0,0.7);
+}
+.cart-detail .list {
+	position: absolute;
+	left: 0;
+	bottom: 100rpx;
+	width: 100%;
+	background: #f7f7f7;
+	padding: 30rpx 0;
+}
+.cart-detail .list .item {
+	display: -webkit-flex;
+	color: #333;
+	font-size: 36rpx;
+	line-height: 50rpx;
+	padding: 20rpx 40rpx;
+}
+.cart-detail .list .item .name {
+	-webkit-flex: 1;
+}
+.cart-detail .list .item .total {
+	width: 120rpx;
+}
+.cart-detail .list .item .reduce,
+.cart-detail .list .item .add {
+	font-size: 50rpx;
+	background: #feb70f;
+	width: 50rpx;
+	height: 50rpx;
+	text-align: center;
+	border-radius: 50%;
+}
+.cart-detail .list .item .num {
+	width: 50rpx;
+	text-align: center;
+	margin: 0 5rpx;
+}
+
+.cart {
+	display: -webkit-flex;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100rpx;
+	background: gainsboro;
+}
+.cart .data {
+  -webkit-flex: 1;
+	/*border-top: 1rpx solid #e7e7e7;*/
+}
+.cart .data .icon {
+	position: absolute;
+	left: 40rpx;
+	top: -20rpx;
+	width: 100rpx;
+	height: 100rpx;
+	background: #feb70f;
+	border-radius: 50%;
+}
+.cart .data .icon image {
+	position: absolute;
+	left: 15rpx;
+	top: 15rpx;
+	width: 70rpx;
+	height: 70rpx;
+}
+.cart .data .icon .count {
+	position: absolute;
+	left: 70rpx;
+	top: -10rpx;
+	font-size: 30rpx;
+	line-height: 40rpx;
+	padding: 0 12rpx;
+	color: #fff;
+	background: #f45044;
+	border-radius: 20rpx;
+}
+.cart .data .total {
+	color: #f45044;
+	font-size: 36rpx;
+	line-height: 100rpx;
+	padding-left: 160rpx;
+}
+.cart button {
+	margin-top: 10rpx;
+	margin-right: 20rpx;
+	width: 200rpx;
+	height: 80%;
+	font-size: 36rpx;
+}
+
+.addCart image{
+  pointer-events: none;
+	width: 30rpx;
+	height: 30rpx;
+}

@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+   <view  class="index-title">
+    <image class="app-icon" src="{{iconurl}}" background-size="cover"></image>
+    <text class="app-name">{{appname}}</text>
+  </view>
+
+ <form class="btn-index" bindsubmit="formSubmit">
+    <view wx:if="{{showinputrealname}}" class="page-section">
+      <view class="weui-cells__title">请输入您的真实姓名：</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input class="weui-input" maxlength="10" name="realname" auto-focus />
+        </view>
+      </view>
+    </view>
+    <view class="btn-area">
+        <button wx:if="{{notOrder}}" formType="submit">点击进入点餐</button>
+        <button wx:else formType="submit">查看今日订单</button>
+    </view>
+</form>
+
+</view>
+
